@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 
 # Versao so
-print(platform.plataform())
+print(platform.platform())
 # PID
 print(os.getpid())
 # uso CPU %
@@ -20,7 +20,7 @@ metricas = {
     'so': platform.platform(),
     'pid': os.getpid(),
     'cpupercent': psutil.cpu_percent(),
-    'usedmembyte': psutil.virtual_me1mory().used // (1024 ** 2)
+    'usedmembyte': psutil.virtual_memory().used // (1024 ** 2)
 }
 
 print(json.dumps(metricas, ensure_ascii=False))
@@ -31,7 +31,7 @@ def index():
     <br>So: <p>{platform.platform()}</p> \
     <br>PID: <p>{os.getpid()}</p> \
     <br>Porcentagem CPU: <p>{psutil.cpu_percent()}</p> \
-    <br>Uso de Memoria(Bytes): <p>{psutil.virtual_me1mory().used // (1024 ** 2)}</p>"
+    <br>Uso de Memoria(Bytes): <p>{psutil.virtual_memory().used // (1024 ** 2)}</p>"
 
 
 @app.route("/info")
