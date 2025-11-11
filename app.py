@@ -40,5 +40,5 @@ def info():
 
 
 @app.route("/metricas")
-def metricas():
+def metrics():
     return metricas
