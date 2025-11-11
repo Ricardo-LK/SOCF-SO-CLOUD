@@ -17,7 +17,7 @@ print(psutil.cpu_percent)
 print(psutil.virtual_memory().used // 1024 ** 2)
 
 metricas = {
-    'so': platform.plataform(),
+    'so': platform.platform(),
     'pid': os.getpid(),
     'cpupercent': psutil.cpu_percent(),
     'usedmembyte': psutil.virtual_me1mory().used // (1024 ** 2)
@@ -28,7 +28,7 @@ print(json.dumps(metricas, ensure_ascii=False))
 @app.route("/")
 def index():
     return f"Nome: <h1>Ricardo Lucas Kucek</h1> \
-    <br>So: <p>{platform.plataform()}</p> \
+    <br>So: <p>{platform.platform()}</p> \
     <br>PID: <p>{os.getpid()}</p> \
     <br>Porcentagem CPU: <p>{psutil.cpu_percent()}</p> \
     <br>Uso de Memoria(Bytes): <p>{psutil.virtual_me1mory().used // (1024 ** 2)}</p>"
