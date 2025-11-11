@@ -41,4 +41,4 @@ def info():
 
 @app.route("/metricas")
 def metricas():
-    return f"<h1>{json.dumps(metricas, ensure_ascii=False)}</h1>"
+    return metricas
